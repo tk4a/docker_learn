@@ -7,5 +7,9 @@ import org.springframework.web.bind.annotation.RestController
 class HelloController {
 
     @GetMapping
-    fun getSomething() = "Hello from java application"
+    fun getSomething(): String {
+        println("Call from class ${javaClass.canonicalName}")
+        println("Method GET")
+        return "Hello from java app"
+    }
 }
